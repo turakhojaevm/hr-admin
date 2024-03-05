@@ -1,0 +1,77 @@
+.p-button:focus {
+  box-shadow: none;
+}
+
+.p-element {
+  margin-bottom: 0;
+}
+
+.employee-quantity {
+  font-size: 2rem;
+  font-weight: 550;
+}
+
+label.action_label {
+  border: 1px solid #1665D8;
+  color: #1665D8;
+  font-size: 12px;
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+
+.img-table {
+  width: 45px;
+  border: 1px solid #FFFFFF;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+label.action_label2 {
+  border: 1px solid #FF8D07;
+  color: #FF8D07;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 110px;
+  text-align: center;
+}
+
+label.action_label.in_active {
+  color: #DC3545;
+  border: 1px solid #DC3545;
+}
+
+.employee_grid {
+  text-align: center;
+  box-shadow: 0 0 10px rgb(137 137 137 / 25%);
+  padding: 25px;
+  border-radius: 10px;
+  margin: 0 15px 30px 15px;
+}
+
+.employee_grid h5 {
+  margin: 10px 0;
+  color: #00882E;
+  font-size: 18px;
+  font-weight: 700;
+}
+.employee_grid label {
+  color: #373D3F;
+  font-size: 15px;
+  font-weight: 600;
+  display:block;
+  margin: 10px 0;
+}
+
+.employee_grid a {
+  color: #3629B7;
+  text-decoration: underline;
+}
+
+.employee_grid img {
+  width: 100px;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
