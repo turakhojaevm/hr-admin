@@ -1,0 +1,284 @@
+.card {
+  background: #fff;
+  -webkit-box-shadow: 0 4px 10px 0 rgb(137 137 137 / 25%);
+  box-shadow: 0 4px 10px 0 rgb(137 137 137 / 25%);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.card-body {
+  position: relative;
+  padding: 25px;
+}
+
+.card .card-header {
+  border-color: rgba(137, 137, 137, 0.25);
+  background-color: #fff;
+  padding: 25px;
+}
+
+.card-header:first-child {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-footer:last-child {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.card-footer {
+  background-color: #fff;
+  border-top: 1px solid #e6e6e6;
+  padding: 1rem;
+}
+
+.employee-team {
+  box-shadow: 0 0 10px 0 rgb(137 137 137 / 25%);
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.employee-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.employee-head .img-table {
+  width: 50px;
+}
+
+.employee-head ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.employee-head ul li {
+  margin: 0 10px;
+}
+
+.employee-head li a {
+  border: 1px solid rgba(235, 236, 241, 1);
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+}
+
+a.edit_employee {
+  color: #2F47BA;
+}
+
+a.edit_delete {
+  color: #DC3545;
+}
+
+.employee-head h2 {
+  color: #00882E;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.employee-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-body .employee-team .employee-contents a.btn-addmember {
+  background: #FF8D07;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 1px solid #FF8D07;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+a.btn-addmember {
+  background: #FF8D07;
+  color: #fff;
+  padding: 20px 25px;
+  font-size: 20px;
+  font-weight: 600;
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid #FF8D07;
+}
+
+.avatar {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar .border {
+  border-width: 3px !important;
+}
+
+.avatar .rounded {
+  border-radius: 6px !important;
+}
+
+.avatar .avatar-title {
+  font-size: 18px;
+}
+
+.avatar-xs {
+  width: 50px;
+}
+
+.avatar-xs .border {
+  border-width: 2px !important;
+}
+
+.avatar-xs .rounded {
+  border-radius: 4px !important;
+}
+
+.avatar-xs .avatar-title {
+  font-size: 12px;
+}
+
+.avatar-xs.avatar-away:before,
+.avatar-xs.avatar-offline:before,
+.avatar-xs.avatar-online:before {
+  border-width: 1px;
+}
+
+.avatar-group {
+  display: inline-flex;
+}
+
+.avatar-group .avatar + .avatar {
+  margin-left: -.75rem;
+}
+
+.avatar-group .avatar-xs + .avatar-xs {
+  margin-left: -.40625rem;
+}
+
+.avatar-group .avatar-sm + .avatar-sm {
+  margin-left: -.625rem;
+}
+
+.avatar-group .avatar-lg + .avatar-lg {
+  margin-left: -1rem;
+}
+
+.avatar-group .avatar-xl + .avatar-xl {
+  margin-left: -1.28125rem;
+}
+
+.avatar-group .avatar:hover {
+  z-index: 1;
+}
+
+.employee-contents ul {
+  padding: 0;
+}
+
+a.btn-addmembers {
+  background: #FF8D07;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid #FF8D07;
+  display: inline-block;
+}
+
+a.btn-addmembers:hover {
+  background: transparent;
+  color: #FF8D07;
+  border: 1px solid #FF8D07;
+}
+
+.employee-contents ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #E0E0E0;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.employee-contents li label img {
+  margin-right: 5px;
+}
+
+.employee-contents li label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.employee-image .avatar > img {
+  width: 100px;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.avatar > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+a.btn-addmember:hover {
+  background: transparent;
+  color: #FF8D07;
+  border: 1px solid #FF8D07;
+  cursor: pointer;
+}
+
+.employee-head ul {
+  list-style-type: none;
+}
+
+.employee-head ul li {
+  cursor: pointer;
+}
+
+.employee-head ul a i {
+  font-size: 21px;
+}
+
+.employee-head h2 {
+  color: #00882E;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+a.edit_employee {
+  color: #2F47BA;
+}
+
+a.edit_delete {
+  color: #DC3545;
+}
+
+.padding-left-10 {
+  padding-left: 10px;
+}
+
+.padding-right-10 {
+  padding-right: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  margin-bottom: 7px;
+}
+
+.team-action .btn:first-child {
+  margin-right: 15px;
+}
