@@ -1,0 +1,130 @@
+<form [formGroup]="addTeam" (ngSubmit)="submitTeam()" class="row mb-5" novalidate>
+  <div class="col-md-12">
+    <div class="form shadow-lg radius-6 mb-5">
+      <div class="form__title p-3">
+        <h3>Basic Details</h3>
+        <h5>Organized and secure</h5>
+      </div>
+      <div class="form__controls p-3">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form__controls-group">
+              <input type="text"
+                     placeholder="First Name"
+                     formControlName="firstName"
+                     pInputText/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form__controls-group">
+              <input type="text"
+                     placeholder="Last Name"
+                     formControlName="lastName"
+                     pInputText/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form__controls-group">
+              <input type="text"
+                     placeholder="Email"
+                     formControlName="email"
+                     pInputText/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+
+    <div class="form shadow-lg radius-6 mb-5">
+      <div class="form__title p-3">
+        <h3>Employment Details</h3>
+        <h5>Let everyone know the essentials so they're fully prepared.</h5>
+      </div>
+      <div class="form__controls p-3">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form__controls-group mb-2">
+              <p-dropdown [options]="countries"
+                          styleClass="width-98"
+                          formControlName="country"
+                          placeholder="Country of Employment"></p-dropdown>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form__controls-group">
+              <input type="text"
+                     placeholder="Start Date"
+                     formControlName="empStartDate"
+                     pInputText/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form__controls-group mb-2">
+              <input type="text"
+                     placeholder="Job Title"
+                     formControlName="jobTitle"
+                     pInputText/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form__controls-group">
+              <p-dropdown [options]="permanent"
+                          styleClass="width-98"
+                          formControlName="permanent"
+                          placeholder="Permanent"></p-dropdown>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+
+    <div class="form shadow-lg radius-6 mb-5">
+      <div class="form__title p-3">
+        <h3>Salary Details</h3>
+        <h5>Stored securely, only visible to Super Admins, Payroll Admins, and themselves</h5>
+      </div>
+      <div class="form__controls p-3">
+        <div class="row">
+          <div class="col-md-6 mb-2">
+            <div class="form__controls-group">
+              <p-dropdown [options]="currency"
+                          styleClass="width-98"
+                          formControlName="currency"
+                          placeholder="Currency"></p-dropdown>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form__controls-group">
+              <p-dropdown [options]="frequency"
+                          styleClass="width-98"
+                          formControlName="frequency"
+                          placeholder="Frequency"></p-dropdown>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form__controls-group">
+              <input type="text"
+                     placeholder="Start Date"
+                     formControlName="salStartDate"
+                     pInputText/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="d-flex align-center add__person-action">
+      <input type="submit" class="btn btn-success" placeholder="Add Team Member">
+      <input type="submit" class="btn btn-danger" placeholder="Cancel">
+    </div>
+  </div>
+
+</form>

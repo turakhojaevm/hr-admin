@@ -7,7 +7,7 @@ import {ButtonModule} from "primeng/button";
 import {EmployeeSelection, SELECTION_BTN} from "../../models/employee-selection";
 import {TEMPLATE_ACTION, TemplateAction} from "../../models/template-action";
 import {TableModule} from "primeng/table";
-import {Employee, EMPLOYEE_DATA} from "../../models/employee";
+import {Employee} from "../../models/employee";
 import {StatusDropdownComponent} from "./status-dropdown/status-dropdown.component";
 import {PaginatorModule, PaginatorState} from "primeng/paginator";
 import {EmployeeService} from "../../services/employee.service";
@@ -16,6 +16,7 @@ import {EmployeesTeamsComponent} from "./employees-teams/employees-teams.compone
 import {EmployeesOfficesComponent} from "./employees-offices/employees-offices.component";
 import {combineLatest} from "rxjs";
 import {EmployeesTeam} from "../../models/employees-team";
+import {EmployeesAddPersonComponent} from "./employees-add-person/employees-add-person.component";
 
 @Component({
   selector: 'app-employees',
@@ -31,7 +32,8 @@ import {EmployeesTeam} from "../../models/employees-team";
     PaginatorModule,
     EmployeesAllComponent,
     EmployeesTeamsComponent,
-    EmployeesOfficesComponent
+    EmployeesOfficesComponent,
+    EmployeesAddPersonComponent
   ],
   templateUrl: './employees.component.html',
   styleUrl: './employees.component.scss',

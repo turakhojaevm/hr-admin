@@ -30,6 +30,8 @@ export class EmployeesTeamsComponent implements OnInit {
   teamActions: TeamAction[] = TEAM_ACTION;
   visibleEdit: boolean = false;
   teamForm!: FormGroup;
+  visibleMember: boolean = false;
+  memberForm!: FormGroup;
 
   constructor(
     private confirmationService: ConfirmationService,
@@ -39,7 +41,10 @@ export class EmployeesTeamsComponent implements OnInit {
 
   ngOnInit() {
     this.teamForm = this.fb.group({
-      name: ['', Validators.required, Validators.maxLength(5)],
+      name: ['', [Validators.required, Validators.maxLength(5)]],
+    });
+    this.memberForm = this.fb.group({
+      name: ['', [Validators.required, Validators.maxLength(20)]],
     });
   }
 
@@ -69,6 +74,14 @@ export class EmployeesTeamsComponent implements OnInit {
 
   addEditTeam(): void {
 
+  }
+
+  openMember(): void {
+    this.visibleMember = true;
+  }
+
+  addMember(): void {
+    console.log(this.memberForm.value)
   }
 
 }

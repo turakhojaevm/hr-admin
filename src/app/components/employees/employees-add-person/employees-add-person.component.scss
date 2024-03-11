@@ -1,0 +1,31 @@
+.form {
+  &__title {
+    border-bottom: 1px solid rgba(137, 137, 137, 0.25);
+    line-height: 0;
+
+    h3 {
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    h5 {
+      font-size: 15px;
+      font-weight: 300;
+    }
+  }
+
+  &__controls {
+
+    &-group input {
+      width: 98%;
+    }
+  }
+}
+
+.add__person-action .btn-success {
+  margin-right: 15px;
+}
+
+.width-98 {
+  width: 98%;
+}

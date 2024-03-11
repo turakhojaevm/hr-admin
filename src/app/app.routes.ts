@@ -10,6 +10,7 @@ import {ReportComponent} from "./components/report/report.component";
 import {ManageComponent} from "./components/manage/manage.component";
 import {SettingsComponent} from "./components/settings/settings.component";
 import {ProfileComponent} from "./components/profile/profile.component";
+import {EmployeesAddPersonComponent} from "./components/employees/employees-add-person/employees-add-person.component";
 
 export const routes: Routes = [
   {
@@ -33,6 +34,13 @@ export const routes: Routes = [
       breadcrumb: 'Employees',
     },
     component: EmployeesComponent,
+  },
+  {
+    path: 'employees/add-person',
+    data: {
+      breadcrumb: 'Add person',
+    },
+    component: EmployeesAddPersonComponent,
   },
   {
     path: 'company',

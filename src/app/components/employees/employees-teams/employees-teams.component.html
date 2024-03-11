@@ -32,7 +32,7 @@
                     </div>
                   </div>
                 </div>
-                <a class="btn-addmember">Add Members</a>
+                <a class="btn-addmember" (click)="openMember()">Add Members</a>
               </div>
             </div>
           </div>
@@ -51,13 +51,31 @@
           [style]="{width: '30vw'}">
   <form [formGroup]="teamForm" (ngSubmit)="addEditTeam()" novalidate>
     <div class="field">
-      <label for="name" class="block">Team</label>
-      <input type="text" pInputText placeholder="Team name" formControlName="name" />
+      <label for="name" class="block">Employee</label>
+      <input type="text" pInputText placeholder="Employee name" formControlName="name" />
     </div>
 
     <div class="d-flex team-action mt-3">
       <button class="btn btn-secondary" pButton type="submit" label="Add" [disabled]="teamForm.invalid"></button>
       <button class="btn btn-danger" pButton type="submit" label="Cancel" (click)="visibleEdit = false"></button>
+    </div>
+  </form>
+</p-dialog>
+
+<p-dialog header="Create New Team"
+          [(visible)]="visibleMember"
+          [draggable]="false"
+          [modal]="true"
+          [style]="{width: '30vw'}">
+  <form [formGroup]="memberForm" (ngSubmit)="addMember()">
+    <div class="field">
+      <label for="name" class="block">Team</label>
+      <input type="text" pInputText placeholder="Team name" formControlName="name" />
+    </div>
+
+    <div class="d-flex team-action mt-3">
+      <button class="btn btn-secondary" pButton type="submit" label="Add" [disabled]="memberForm.invalid"></button>
+      <button class="btn btn-danger" pButton type="submit" label="Cancel" (click)="visibleMember = false"></button>
     </div>
   </form>
 </p-dialog>
