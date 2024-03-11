@@ -1,15 +1,9 @@
-import {Component, DoCheck, OnInit, ViewEncapsulation} from '@angular/core';
-import {BreadcrumbComponent} from "../../core/breadcrumb/breadcrumb.component";
-import {BreadcrumbModule} from "primeng/breadcrumb";
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {SelectButtonModule} from "primeng/selectbutton";
-import {FormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {EmployeeSelection, SELECTION_BTN} from "../../models/employee-selection";
-import {TEMPLATE_ACTION, TemplateAction} from "../../models/template-action";
-import {TableModule} from "primeng/table";
 import {Employee} from "../../models/employee";
-import {StatusDropdownComponent} from "./status-dropdown/status-dropdown.component";
-import {PaginatorModule, PaginatorState} from "primeng/paginator";
+import {PaginatorModule} from "primeng/paginator";
 import {EmployeeService} from "../../services/employee.service";
 import {EmployeesAllComponent} from "./employees-all/employees-all.component";
 import {EmployeesTeamsComponent} from "./employees-teams/employees-teams.component";
@@ -17,38 +11,31 @@ import {EmployeesOfficesComponent} from "./employees-offices/employees-offices.c
 import {combineLatest} from "rxjs";
 import {EmployeesTeam} from "../../models/employees-team";
 import {EmployeesAddPersonComponent} from "./employees-add-person/employees-add-person.component";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-employees',
   standalone: true,
   imports: [
-    BreadcrumbComponent,
-    BreadcrumbModule,
     SelectButtonModule,
-    FormsModule,
     ButtonModule,
-    TableModule,
-    StatusDropdownComponent,
     PaginatorModule,
     EmployeesAllComponent,
     EmployeesTeamsComponent,
     EmployeesOfficesComponent,
-    EmployeesAddPersonComponent
+    EmployeesAddPersonComponent,
+    RouterLink,
   ],
   templateUrl: './employees.component.html',
   styleUrl: './employees.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class EmployeesComponent implements OnInit, DoCheck {
+export class EmployeesComponent implements OnInit {
 
   selectionBtn: EmployeeSelection[] | undefined = SELECTION_BTN;
   selectionValue: number | undefined = 1;
-  actionOptions: TemplateAction[] = TEMPLATE_ACTION;
-  actionValue: TemplateAction = TEMPLATE_ACTION[1];
   employees: Employee[] = [];
   employeesTeam: EmployeesTeam[] = [];
-  first: number | any = 0;
-  rows: number | any = 3;
 
   constructor(
     private employeeService: EmployeeService,
@@ -65,16 +52,5 @@ export class EmployeesComponent implements OnInit, DoCheck {
     });
   }
 
-  ngDoCheck() {
-  }
 
-  onPageChange(event: PaginatorState) {
-    if (event.first) {
-      this.first = event.first;
-    }
-
-    if (event.rows) {
-      this.rows = event.rows;
-    }
-  }
 }

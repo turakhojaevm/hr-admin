@@ -1,0 +1,89 @@
+<div class="row mb-4">
+  <div class="col-md-10">
+    <div class="shadow-lg p-3 radius-6 employee-quantity">{{ employees.length }} People</div>
+  </div>
+  <div class="col-md-2">
+    <div class="d-flex justify-end align-center employee-template-action">
+      <p-selectButton [options]="actionOptions"
+                      [(ngModel)]="actionValue"
+                      [styleClass]="'shadow-lg radius-6'"
+                      optionLabel="icon">
+        <ng-template let-item pTemplate>
+          <i [class]="item.icon" class="p-3"></i>
+        </ng-template>
+      </p-selectButton>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-5">
+  <div class="col-md-12 shadow-lg radius-6">
+    @if (actionValue.justify === 'List') {
+      <p-table selectionMode="single"
+               [value]="employees"
+               [paginator]="true"
+               [rows]="8"
+               [showCurrentPageReport]="true"
+               [tableStyle]="{ 'min-width': '50rem' }"
+               currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+               [rowsPerPageOptions]="[5, 10, 20]">
+        <ng-template pTemplate="caption"> Project Summery</ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Name</th>
+            <th>Line Manager</th>
+            <th>Team</th>
+            <th>Office</th>
+            <th>Permissions</th>
+            <th>Status</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-employee>
+          <tr>
+            <td>
+              <div class="d-flex align-center">
+                <img [src]="employee.avatar" alt="profile" class="img-table"/>
+                {{ employee.name }}
+              </div>
+            </td>
+            <td>
+              <label class="action_label">{{ employee.manager }}</label>
+            </td>
+            <td>
+              <label class="action_label2">{{ employee.team }}</label>
+            </td>
+            <td>{{ employee.office }}</td>
+            <td>{{ employee.permissions }}</td>
+            <td>
+              <app-status-dropdown></app-status-dropdown>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    } @else if (actionValue.justify === 'Grid') {
+      <div class="row p-4">
+        @for (employee of employees; track employee) {
+          <div class="col-md-4">
+            <div class="employee_grid">
+              <a routerLink="/profile">
+                <img [src]="employee.avatar" alt="profile"/>
+              </a>
+              <h5>{{ employee.name }}</h5>
+              <label>{{ employee.team }} {{ employee.permissions }}</label>
+              <a>
+                <span class="__cf_email__" data-cfemail="254844574c44464a51514a4b65405d44485549400b464a48">[email&#160;protected]</span>
+              </a>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="mt-5">
+        <p-paginator [first]="first"
+                     [rows]="rows"
+                     [totalRecords]="employees.length"
+                     (onPageChange)="onPageChange($event)"></p-paginator>
+      </div>
+    }
+  </div>
+</div>
